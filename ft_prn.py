@@ -324,7 +324,10 @@ for epoch in range(args.epochs):
         torch.save(model.state_dict(), os.path.join(args.out_dir, f'{args.model}_{args.pre_trained}_{args.lr_max}_{args.scale}_last.pth'))
 
 
-    
+print(f"Total train time: {train_time / 60:.4f} minutes")
+print(f"Best avg checkpoint  : epoch {highest_idx}, acc {highest_acc:.4f}")
+print(f"Best worst checkpoint: epoch {highest_worst_idx}, acc {highest_acc_worst:.4f}")
+print(f"Best both checkpoint : epoch {highest_both_idx}, acc {highest_acc_both:.4f}")
 
 
 logger.info('Total train time: %.4f minutes', (train_time)/60)
